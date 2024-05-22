@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+# ECE385
+tetris
+t200
+
+
+
 # Object files
 *.o
 *.ko

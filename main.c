@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 #define WIDTH 20
-#define HEIGHT 5
+#define HEIGHT 30
 
 typedef struct {
     int x, y;  // 方块的左上角坐标
@@ -101,6 +101,7 @@ int main() {
             // 检查新生成的方块是否超出屏幕边界
             for (int i = 0; i < 4; i++) {
                 for (int j = 0; j < 4; j++) {
+                    // 注意这里是 屏幕上边界 y = 0 
                     if (block.shape[i][j] == 1 && block.y + i <= 0) {
                         printf("Overflow! Game over.\n");
                         return 0; // 终止程序
@@ -118,7 +119,7 @@ int main() {
         // 延迟以模拟帧率
         usleep(500000);
 
-        // 清屏
+        // 不能清屏，会有问题
         // printf("\033[H\033[J");
     }
 
